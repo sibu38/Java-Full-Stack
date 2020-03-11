@@ -13,13 +13,13 @@ public class JdbcMySqlMain {
 	System.out.println("Connection Established \n");
 	Statement stmt=dbcon.createStatement();
 	ResultSet rs=stmt.executeQuery("SELECT * FROM EMPLOYEE");
-	while(rs.next()) {
+	/*while(rs.next()) {
 		int id=rs.getInt("Id");
 		String name=rs.getString("Name");
 		double salary=rs.getDouble("Salary");
 		System.out.println(id+" - "+name+" - "+salary);
 	}
-	/*rs.close();
+	rs.close();
 	stmt.close();
 	dbcon.close();*/
 	//int c=stmt.executeUpdate("INSERT INTO EMPLOYEE(Id,Name,Salary) VALUES(4,'SOMU',52000)");
@@ -30,7 +30,7 @@ public class JdbcMySqlMain {
 		double salary=rs.getDouble("Salary");
 		System.out.println(id+" - "+name+" - "+salary);
 	}*/
-	//int c=stmt.executeUpdate("DELETE FROM EMPLOYEE WHERE Id=6");
+	 int c=stmt.executeUpdate("DELETE FROM EMPLOYEE WHERE Id<4");
 	while(rs.next()) {
 		int id=rs.getInt("Id");
 		String name=rs.getString("Name");
